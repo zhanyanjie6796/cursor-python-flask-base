@@ -8,6 +8,8 @@
 
 ```
 ├── app.py              # Flask 主程式
+├── templates/
+│   └── index.html      # 首頁模板
 ├── requirements.txt    # Python 依賴套件
 ├── render.yaml         # Render 部署配置
 ├── Procfile            # Render 啟動命令
