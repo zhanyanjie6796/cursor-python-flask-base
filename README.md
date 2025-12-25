@@ -105,7 +105,7 @@ git push -u origin main
 
 #### 步驟二：在 Render 部署
 
-1. 前往 [render.com](https://render.com) 並註冊帳號（可用 GitHub 登入）
+1. 前往 [render.com](https://render.com) 並註冊帳號（可用 GitHub 登入或gmail：jack6796）
 2. 點擊右上角 **New** → **Web Service**
 3. 選擇 **Build and deploy from a Git repository**
 4. 連接你的 GitHub 帳號並選擇此倉庫
