@@ -10,6 +10,7 @@
 ├── app.py              # Flask 主程式
 ├── requirements.txt    # Python 依賴套件
 ├── render.yaml         # Render 部署配置
+├── Procfile            # Render 啟動命令
 └── README.md           # 說明文件
 ```
 
@@ -117,6 +118,32 @@ A: 在 `app.py` 中新增路由即可，例如：
 def about():
     return "<h1>關於我們</h1>"
 ```
+
+---
+
+## 🔧 故障排除
+
+### 部署失敗：ModuleNotFoundError: No module named 'your_application'
+
+如果 Render 部署時出現此錯誤，表示 Render 沒有正確讀取啟動命令。請手動設定：
+
+1. 前往 [Render Dashboard](https://dashboard.render.com)
+2. 點擊你的服務 **cursor-python-flask-base**
+3. 點擊左側 **Settings**
+4. 找到 **Build & Deploy** 區塊，修改以下設定：
+
+| 設定項目 | 設定值 |
+|----------|--------|
+| **Build Command** | `pip install -r requirements.txt` |
+| **Start Command** | `gunicorn app:app` |
+
+5. 點擊 **Save Changes**
+6. 點擊 **Manual Deploy** → **Deploy latest commit**
+
+### 部署成功但網站無法訪問
+
+- 確認網址是否正確：https://cursor-python-flask-base.onrender.com
+- 免費版首次訪問需等待約 50 秒喚醒
 
 ---
 
